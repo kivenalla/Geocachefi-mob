@@ -1,0 +1,11 @@
+@use "@/old/styles/common" as *;
+
+.gc-button-warning{
+    background-color: $color-dark-green;
+    border: 1px solid $color-orange;
+    color: $color-orange;
+
+        &:active{
+        background-color: $color-green;
+    }
+}

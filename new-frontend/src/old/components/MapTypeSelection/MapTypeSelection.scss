@@ -1,0 +1,44 @@
+@use "../../styles/common" as *;
+
+.map-type-menu{
+    background-color: #FFFFFF;
+    border-color: #163E3D;
+    border-width: 10px;
+    border-style: solid;
+    align-items: flex-end;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    bottom: 0;
+    left: 50%;
+    pointer-events: none;
+}
+
+.map-type-item{
+    list-style-type: none;
+    list-style-image: none;
+    pointer-events: all;
+    margin-left: -25px;
+    margin-right: 10px;
+    padding-top: 5px;
+    font-family: $font-family-sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.tick{
+    width: 20px;
+    padding-right: 5px;
+    visibility: visible;
+}
+
+.untick{
+    width: 20px;
+    padding-right: 5px;
+    visibility: hidden;
+}
+
+.map-type-menu-container{
+    pointer-events: all;
+}

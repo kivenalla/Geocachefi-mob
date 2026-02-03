@@ -1,0 +1,50 @@
+@use "bootstrap" as *;
+@use "../../styles/common" as *;
+
+.button-basic{
+    border: solid 1px $color-light-green;
+}
+.home-page-content{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 60px;
+}
+
+.feed-section{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.feed-header{
+    text-align: center;
+}
+
+.home-page-banner-container{
+    height: 100px;
+    width: 100%;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.home-page-banner-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    z-index: 20;
+    font-size: x-large;
+    color: $color-dark-green;
+}
+
+.home-page-banner{
+    width: 100%;
+}
+.load-button{
+    width: 105px;
+}

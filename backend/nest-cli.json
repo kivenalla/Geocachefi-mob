@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "plugins": [
+      {
+        "name": "@nestjs/swagger",
+        "options": {
+          "introspectComments": true
+        }
+      }
+    ],
+    "assets": [
+      {
+        "include": "libs/database/src/migrations/**/*",
+        "outDir": "dist/libs/database/src/migrations"
+      },
+      {
+        "include": "**/*.json",
+        "outDir": "dist/src",
+        "watchAssets": true
+      },
+      {
+        "include": "config/**/*",
+        "outDir": "dist/config",
+        "watchAssets": true
+      },
+      {
+        "include": "**/*.ttf",
+        "outDir": "dist/src",
+        "watchAssets": true
+      }
+    ],
+    "watchAssets": true
+  },
+  "projects": {
+    "auth": {
+      "type": "library",
+      "root": "libs/auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/auth/tsconfig.lib.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
+    "generated-types": {
+      "type": "library",
+      "root": "libs/generated-types",
+      "entryFile": "index",
+      "sourceRoot": "libs/generated-types/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/generated-types/tsconfig.lib.json"
+      }
+    },
+    "geocaches": {
+      "type": "library",
+      "root": "libs/geocaches",
+      "entryFile": "index",
+      "sourceRoot": "libs/geocaches/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/geocaches/tsconfig.lib.json"
+      }
+    },
+    "geocaching-api": {
+      "type": "library",
+      "root": "libs/geocaching-api",
+      "entryFile": "index",
+      "sourceRoot": "libs/geocaching-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/geocaching-api/tsconfig.lib.json"
+      }
+    },
+    "mock-geocaches": {
+      "type": "library",
+      "root": "libs/mock-geocaches",
+      "entryFile": "index",
+      "sourceRoot": "libs/mock-geocaches/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/mock-geocaches/tsconfig.lib.json"
+      }
+    },
+    "users": {
+      "type": "library",
+      "root": "libs/users",
+      "entryFile": "index",
+      "sourceRoot": "libs/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/users/tsconfig.lib.json"
+      }
+    }
+  }
+}

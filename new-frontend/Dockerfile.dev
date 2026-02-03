@@ -1,0 +1,29 @@
+# syntax=docker/dockerfile:1.7
+FROM node:20-alpine
+
+# We'll keep the whole workspace here so ../new-frontend is available
+WORKDIR /workspace
+
+# 1) Copy only package manifests first (cache-friendly)
+COPY mock-backend/package*.json mock-backend/
+COPY new-frontend/package*.json new-frontend/
+
+# 2) Install deps for BOTH backend and new-frontend
+RUN --mount=type=cache,target=/root/.npm \
+    npm install --prefix mock-backend && \
+    npm install --prefix new-frontend
+
+# 3) Copy sources for BOTH projects (so it also works without bind mounts)
+COPY mock-backend/ mock-backend/
+COPY new-frontend/ new-frontend/
+
+# 4) Dev env
+ENV NODE_ENV=development \
+    PORT=3000
+
+# 5) Work from new-frontend dir and expose new-frontend port
+WORKDIR /workspace/new-frontend
+EXPOSE 3000
+
+# CMD to run on start
+CMD npm run dev

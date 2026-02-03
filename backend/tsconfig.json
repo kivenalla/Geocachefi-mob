@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2023",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/auth": [
+        "libs/auth/src"
+      ],
+      "@app/auth/*": [
+        "libs/auth/src/*"
+      ],
+      "@app/database": [
+        "libs/database/src"
+      ],
+      "@app/database/*": [
+        "libs/database/src/*"
+      ],
+      "@app/generated-types": [
+        "libs/generated-types/src"
+      ],
+      "@app/generated-types/*": [
+        "libs/generated-types/src/*"
+      ],
+      "@app/geocaches": [
+        "libs/geocaches/src"
+      ],
+      "@app/geocaches/*": [
+        "libs/geocaches/src/*"
+      ],
+      "@app/geocaching-api": [
+        "libs/geocaching-api/src"
+      ],
+      "@app/geocaching-api/*": [
+        "libs/geocaching-api/src/*"
+      ],
+      "@app/ground": [
+        "libs/ground/src"
+      ],
+      "@app/ground/*": [
+        "libs/ground/src/*"
+      ],
+      "@app/mock-geocaches": [
+        "libs/mock-geocaches/src"
+      ],
+      "@app/mock-geocaches/*": [
+        "libs/mock-geocaches/src/*"
+      ],
+      "@app/users": [
+        "libs/users/src"
+      ],
+      "@app/users/*": [
+        "libs/users/src/*"
+      ]
+    }
+  }
+}

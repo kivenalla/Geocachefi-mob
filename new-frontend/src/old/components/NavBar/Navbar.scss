@@ -1,0 +1,103 @@
+@use "@/old/styles/common" as *;
+
+.color-link{
+    color: white;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.logo-navbar{
+    transform: scale(1.4);
+    @media screen and (max-width: 400px){
+        transform: scale(1.2);
+    }
+}
+
+.gc-navbar{
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: $navbar-height;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #163E3D;
+    z-index: 1000;
+
+    &--fixed{
+        position: fixed;
+    }
+}
+
+.gc-navbar-content {
+    height: $navbar-height;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    position: relative; 
+}
+
+.gc-navbar-item{
+    position: relative;
+    cursor: pointer;
+}
+
+.gc-navbar-item--left {
+    position: absolute;
+    left: 10px;
+}
+
+.gc-navbar-item--right {
+    position: absolute;
+    right: 10px;
+}
+
+.gc-navbar-user-menu{
+    position: absolute;
+    right: -10px;
+    top: 120%;
+    color: white;
+    background-color: $color-dark-green;
+    padding: 10px;
+    width: 25vh;
+    hr{
+        color: $color-white;
+    }
+}
+
+.dropdown-item{
+    display: inline-block;
+    margin: 5px;
+    font-family: 'Open Sans', sans-serif;
+
+    svg path {
+        stroke: white;
+    }
+}
+
+.user-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.gc-navbar-username {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .gc-navbar-username {
+        display: none !important;
+    }
+}
+
+
+.premium-star {
+    position: absolute;
+    top: -4px;     
+    right: -4px;
+    color: #ffc107; 
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none; 
+}

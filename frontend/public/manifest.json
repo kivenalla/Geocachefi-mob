@@ -1,0 +1,9 @@
+{
+  "short_name": "Geocache.fi mobile",
+  "name": "Mobile version of Geocache.fi website",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

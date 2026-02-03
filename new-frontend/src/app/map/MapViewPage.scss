@@ -1,0 +1,25 @@
+@use "@/old/styles/common" as *;
+
+.leaflet-container {
+    height: 90vh;
+    width: 100%;
+}
+
+.map-view-page {
+    height: calc(100% - $navbar-height);
+}
+
+//Set leaflet's attribution label lower so it won't go over menu elements
+.leaflet-top,
+.leaflet-bottom {
+
+    z-index: 999 !important
+}
+
+.map-view {
+    height: 100%; 
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+}
+

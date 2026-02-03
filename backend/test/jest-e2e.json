@@ -1,0 +1,28 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@app/auth": "<rootDir>/../libs/auth/src",
+    "@app/auth/(.*)": "<rootDir>/../libs/auth/src/$1",
+    "@app/database": "<rootDir>/../libs/database/src",
+    "@app/database/(.*)": "<rootDir>/../libs/database/src/$1",
+    "@app/geocaches": "<rootDir>/../libs/geocaches/src",
+    "@app/geocaches/(.*)": "<rootDir>/../libs/geocaches/src/$1",
+    "@app/mock-geocaches": "<rootDir>/../libs/mock-geocaches/src",
+    "@app/mock-geocaches/(.*)": "<rootDir>/../libs/mock-geocaches/src/$1",
+    "@app/users": "<rootDir>/../libs/users/src",
+    "@app/users/(.*)": "<rootDir>/../libs/users/src/$1",
+    "^@app/generated-types(|/.*)$": "<rootDir>/../libs/generated-types/src/$1",
+    "^@app/geocaching-api(|/.*)$": "<rootDir>/../libs/geocaching-api/src/$1",
+    "^@app/ground(|/.*)$": "<rootDir>/../libs/ground/src/$1"
+  }
+}

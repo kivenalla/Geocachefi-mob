@@ -1,0 +1,22 @@
+# Use the official lightweight Node.js 18 image.
+# https://hub.docker.com/_/node
+FROM node:24.7
+# Add a cache-busting argument. Update this value to invalidate the cache.
+ARG CACHE_BUST=2
+# Create and change to the app directory.
+WORKDIR /usr/src/app
+
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+COPY package*.json ./
+ADD . ./
+# 3) Copy the rest of your app
+# COPY . .
+RUN ls -al
+# Cache bust by referencing the argument. If CACHE_BUST changes, it will invalidate the cache.
+RUN echo "Cache bust: $CACHE_BUST"
+RUN node --version
+# Cache bust by referencing the argument. If CACHE_BUST changes, it will invalidate the cache.
+RUN echo "Cache bust: $CACHE_BUST"
+RUN npm install --force
+
+CMD npm run start:debug

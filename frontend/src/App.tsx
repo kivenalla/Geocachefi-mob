@@ -1,0 +1,41 @@
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import CachePage from "./pages/CachePage/CachePage";
+import "./styles/App.scss";
+import Authorize from "./components/Authorize";
+import { useContext, useEffect } from "react";
+import { refreshUser } from "./api/auth";
+import UserContext from "./context/UserContext";
+import MapViewPage from "./pages/MapViewPage";
+
+const unauthorizedMsg = {
+    map: "Kartta näkyy vain sisäänkirjautuneille",
+    cache: "Kätkön tiedot näkyvät vain sisäänkirjautuneille!"
+};
+
+function App() {
+
+    const { setUser } = useContext(UserContext);
+    
+    useEffect(() => {
+        refreshUser().then(usr => {
+            setUser(usr);
+        });
+    }, [setUser]);
+
+    return (
+        <div className="app">
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route element={<Authorize allowedRoles={["basic", "premium"]} unauthorizedMsg={unauthorizedMsg.map} />}>
+                    <Route path="/map" element={<MapViewPage />} />
+                </Route>
+                <Route element={<Authorize allowedRoles={["basic", "premium"]} unauthorizedMsg={unauthorizedMsg.cache} />}>
+                    <Route path="/geocaches/:cacheId" element={<CachePage />} />
+                </Route>
+            </Routes>
+        </div>
+    );
+}
+
+export default App;
