@@ -2,7 +2,7 @@
 
 ## Project structure
 
-The frontend code can be found inside the frontend -folder. A mock backend for the frontend can be found in the mock-backend -folder. Both the frontend and the mock backend need to be running for the application to work properly. README files can be found on both of these folders for further instructions. For now the easiest way is to run the frontend and mock backend in separate terminals.
+The frontend code can be found inside the frontend -folder. The backend (NestJS) can be found in the backend -folder. Both the frontend and the backend need to be running for the application to work properly. README files can be found on both of these folders for further instructions.
 
 ## Github workflow
 

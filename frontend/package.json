@@ -78,5 +78,4 @@
       "node_modules/(?!(axios|react-leaflet|@react-leaflet))"
     ]
   },
-  "proxy": "http://host.docker.internal:3001"
 }

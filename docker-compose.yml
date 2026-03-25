@@ -14,7 +14,6 @@ services:
       PORT: 3000
     volumes:
       - ./:/workspace                          # mount ../ to workspace (taken from build context which is pointing to ../)
-      - /workspace/mock-backend/node_modules   # keep deps in container (To prevent overriding from local computer to container)
       - /workspace/frontend/node_modules       # keep deps in container (To prevent overriding from local computer to container)
 
   new-frontend:
@@ -32,22 +31,7 @@ services:
       - SSL_KEY_FILE=/workspace/new-frontend/.certs/host.docker.internal.key
     volumes:
       - ./:/workspace                          # mount ../ to workspace (taken from build context which is pointing to ../)
-      - /workspace/mock-backend/node_modules   # keep deps in container (To prevent overriding from local computer to container)
       - /workspace/new-frontend/node_modules       # keep deps in container (To prevent overriding from local computer to container)
-  mock-backend:
-    build:
-      context: . # 👈 repo root
-      dockerfile: mock-backend/Dockerfile.dev
-    working_dir: /workspace/mock-backend
-    ports:
-      - "3001:3001" # Mounts local  3000 port to api 3001 port. Left side is local computer port and right is container port
-    environment:
-      NODE_ENV: development
-      PORT: 3001
-    volumes:
-      - ./:/workspace                          # mount ../ to workspace (taken from build context which is pointing to ../)
-      - /workspace/mock-backend/node_modules   # keep deps in container (To prevent overriding from local computer to container)
-      - /workspace/frontend/node_modules       # keep deps in container (To prevent overriding from local computer to container)
 
 
   backend:
